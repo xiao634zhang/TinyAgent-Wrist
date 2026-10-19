@@ -40,7 +40,7 @@ flowchart LR
 
 ```powershell
 git clone https://github.com/xiao634zhang/TinyAgent-Wrist.git
-cd tinyagent-wrist
+cd TinyAgent-Wrist
 py -3 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
 .\.venv\Scripts\python.exe configure.py
