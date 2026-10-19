@@ -45,7 +45,7 @@ class ConfigurationTests(unittest.TestCase):
             self.assertEqual(len(json.loads((home/'hooks.json').read_text())['hooks']['Stop']), 2)
             rules = (home/'AGENTS.md').read_text(encoding='utf-8')
             self.assertTrue(rules.startswith('Existing instructions.'))
-            self.assertEqual(rules.count('<!-- codex-wrist-notify:start -->'), 1)
+            self.assertEqual(rules.count('<!-- tinyagent-wrist:start -->'), 1)
 
     def test_topic_must_be_configured(self):
         with self.assertRaises(ValueError): send_notification.send('https://ntfy.sh', '', 'do not send')

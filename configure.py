@@ -43,7 +43,7 @@ def merge_hooks(existing, generated):
 
 
 def rules(root, python):
-    return f'''<!-- codex-wrist-notify:start -->
+    return f'''<!-- tinyagent-wrist:start -->
 ## Codex phone notifications (explicit content opt-in)
 The user has opted in to forwarding final replies and questions to their configured ntfy server/topic.
 Before asking a question, save the exact questions/options as UTF-8 JSON with a top-level questions array, then run:
@@ -55,7 +55,7 @@ Still display the original question/reply. Notification delivery is not a user a
 If sending fails, continue the conversation and disclose the failure; do not retry indefinitely.
 Only applies when these local paths exist. Do not send internal analysis, composer suggestions, cookies, tokens or passwords.
 Native hooks and fallbacks share short-window deduplication; hooks never approve operations.
-<!-- codex-wrist-notify:end -->
+<!-- tinyagent-wrist:end -->
 '''
 
 
@@ -105,7 +105,7 @@ def main():
         original = file.read_text(encoding='utf-8-sig') if file.exists() else ''
         backup = ROOT / f'logs/AGENTS-backup-{stamp}.md'; backup.parent.mkdir(exist_ok=True)
         backup.write_text(original, encoding='utf-8')
-        pattern = r'(?s)<!-- codex-wrist-notify:start -->.*?<!-- codex-wrist-notify:end -->\n?'
+        pattern = r'(?s)<!-- tinyagent-wrist:start -->.*?<!-- tinyagent-wrist:end -->\n?'
         updated = re.sub(pattern, lambda _: rule_text, original) if re.search(pattern, original) else original.rstrip() + '\n\n' + rule_text
         file.write_text(updated, encoding='utf-8')
         print('Content forwarding rules installed; reload/resume the Codex conversation if needed.')

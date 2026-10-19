@@ -1,6 +1,12 @@
-# Codex Wrist Notify
+# TinyAgent Wrist
 
-把 Codex 的**完成正文、问题与选项**送到 Android 手机，再通过配套 App 转发到手环。附带 USB Android 控制工具，以及独立运行的训练告警适配器。
+**Turn a cheap fitness band into an AI agent companion.**
+
+**让普通低成本智能手环成为 AI Coding Agent 的随身交互终端。**
+
+核心目标：无需 Wear OS，无需修改固件，让受限智能手环也能参与人机协作。
+
+当前实现把 Codex 的**完成正文、问题与选项**送到 Android 手机，再通过配套 App 转发到手环；附带 USB Android 控制工具和独立训练告警适配器。首版支持消息接收与查看，回复和权限批准仍在手机或电脑完成，手环双向输入尚未实现。
 
 **实测组合：Windows + Codex 桌面端 / VS Code + vivo Android + ntfy + Keep + Keep B4 Lite。** 其他手机、手环、配套 App 尚需验证。当前为 `0.1.0`，修复后熄屏测试已通过，长期稳定性仍需观察。
 
@@ -33,8 +39,8 @@ flowchart LR
 需要 Python 3.11+，Windows PowerShell，手机已安装 ntfy、Keep 并连接手环。仅通知不需要 ADB 或 Pillow；截图工具需要 Pillow。ADB、scrcpy 请自行从官方安装，仓库不重新分发它们。
 
 ```powershell
-git clone https://github.com/xiao634zhang/codex-wrist-notify.git
-cd codex-wrist-notify
+git clone https://github.com/xiao634zhang/TinyAgent-Wrist.git
+cd tinyagent-wrist
 py -3 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
 .\.venv\Scripts\python.exe configure.py

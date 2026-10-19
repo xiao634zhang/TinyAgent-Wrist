@@ -4,7 +4,7 @@
 
 通知路径是电脑→ntfy服务器→Android系统通知→Keep→蓝牙手环。ADB路径是电脑→USB→手机，作用是诊断和控制。第一条打通后可拔USB。手机离电脑远没关系，但手机需要联网、和手环保持连接；电脑需要开机联网。
 
-Python建议3.11及以上。先完成README中的克隆、venv和 `configure.py`。可以把仓库放在任意普通路径（例如 `D:\codex-wrist-notify`），路径不接受双引号、美元符、反引号或换行；安装后移动目录需重新生成配置和审查新命令。
+Python建议3.11及以上。先完成README中的克隆、venv和 `configure.py`。可以把仓库放在任意普通路径（例如 `D:\tinyagent-wrist`），路径不接受双引号、美元符、反引号或换行；安装后移动目录需重新生成配置和审查新命令。
 
 `configure.py` 只写本项目的本地配置，默认不改Codex。重复运行保留现有主题。`--server https://your-ntfy.example` 可在首次生成时选服务器；改变已存在配置时直接在本地编辑配置。`notification_config.example.json` 只是模板，不包含可用个人主题。
 
@@ -40,7 +40,7 @@ Python建议3.11及以上。先完成README中的克隆、venv和 `configure.py`
 
 `logs/hook-delivery.log` 记录开始/失败、发送回执和抑制原因，包含会话ID等本地元数据，不应公开。`logs/controller.log`、截图、UI XML和训练检查日志也可能涉及隐私。参考 [SECURITY.md](../SECURITY.md)。
 
-停用：从Codex的hooks界面停用本项目条目；编辑用户hooks.json仅移除指向本项目脚本的组，保留其他组；从用户AGENTS.md删除 `codex-wrist-notify:start/end` 标记内的规则。安装前备份位于本项目logs目录，恢复前核对备份后是否还有其他配置修改，避免覆盖它们。关闭独立监控见训练教程。可以保留手机App和手环原有功能。
+停用：从Codex的hooks界面停用本项目条目；编辑用户hooks.json仅移除指向本项目脚本的组，保留其他组；从用户AGENTS.md删除 `tinyagent-wrist:start/end` 标记内的规则。安装前备份位于本项目logs目录，恢复前核对备份后是否还有其他配置修改，避免覆盖它们。关闭独立监控见训练教程。可以保留手机App和手环原有功能。
 
 ## Android 控制
 
