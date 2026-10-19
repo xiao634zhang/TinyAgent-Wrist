@@ -1,0 +1,10 @@
+{
+  "server": "https://ntfy.sh",
+  "topic": "REPLACE_WITH_YOUR_RANDOM_TOPIC",
+  "stale_seconds": 300,
+  "stall_seconds": 900,
+  "loss_spike_ratio": 10,
+  "targets": [
+    {"name": "Example training", "url": "http://127.0.0.1:9876"}
+  ]
+}

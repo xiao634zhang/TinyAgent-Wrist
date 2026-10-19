@@ -1,0 +1,9 @@
+{
+  "server": "https://ntfy.sh",
+  "topic": "REPLACE_WITH_YOUR_RANDOM_TOPIC",
+  "max_chars": 420,
+  "dedupe_seconds": 60,
+  "include_commands": false,
+  "permission_notifications": false,
+  "only_user_thread_completions": true
+}
